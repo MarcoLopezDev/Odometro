@@ -5,6 +5,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import 'package:pedometer/pedometer.dart';
+import 'package:timer_count_down/timer_count_down.dart';
+import 'package:timer_count_down/timer_controller.dart';
 
 import 'dart:developer' as developer;
 
@@ -39,9 +41,11 @@ class _MyAppState extends State<MyApp> {
             _counter--;
           } else {
             _timer.cancel();
+            sendData();
           }
         });
       });
+      
     }
 
 
@@ -190,5 +194,6 @@ class _MyAppState extends State<MyApp> {
         ),
       ),
     );
+
   }
 }
